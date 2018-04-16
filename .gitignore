@@ -1,2 +1,4 @@
 node_modules
 htdocs
+modules/pow3r/pdf/*.pdf
+*/**/Thumbs.db
