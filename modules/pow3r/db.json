@@ -1,0 +1,20 @@
+{
+  "1": {
+    "bezeichnung": "T-Shirt Halblang",
+    "ean": "987532123100",
+    "groesse": "S",
+    "bild": "http://localhost:8081/profoundui/userdata/images/987532123100.jpg"
+  },
+  "2": {
+    "bezeichnung": "T-Shirt Halblang",
+    "ean": "987532123101",
+    "groesse": "M",
+    "bild": "http://localhost:8081/profoundui/userdata/images/987532123102.jpg"
+  },
+  "3": {
+    "bezeichnung": "T-Shirt Halblang",
+    "ean": "987532123102",
+    "groesse": "L",
+    "bild": "http://localhost:8081/profoundui/userdata/images/987532123103.jpg"
+  }
+}
