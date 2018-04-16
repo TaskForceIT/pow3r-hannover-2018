@@ -1,6 +1,7 @@
 // NPM Module laden
 
-const { generateBarcode, generatePdf, sendEmail } = require("./utility.js");
+// const { generateBarcode, generatePdf, sendEmail } = require("./utility.js");
+pjs.import("./utility.js", ["generateBarcode", "generatePdf", "sendEmail"]);
 
 let barcodeGen = pjs.fiber.wrap(generateBarcode);
 let pdfGen = pjs.fiber.wrap(generatePdf);
@@ -14,20 +15,30 @@ function pow3r() {
 
   pjs.defineDisplay("dashboard", "dashboard.json");
 
-  // mit der Datenbank verbinden
-  pjs.connect("*LOCAL");
+  /* Hier würde das Programm sich mit der DB2 Datenbank verbinden. Dafür braucht
+    man aber den kostenpflichtigen Profound.js Connector. Damit man dieses Programm
+    auch ohne Connector ausführen kann, wird hier der Datenbankzugriff mit dem Lesen
+    einer JSON Datei simuliert.
+  */
+  // pjs.connect("*LOCAL");
+
+  let dbData = require("./db.json");
+  // aufgrund dieser Methode, gibt es kein Autocomplete in der Suchleiste
 
   // solange nicht der "BEENDEN" Knopf gedrückt wird
   while (!endprogram) {
     if (artikelid.trim().length > 0) {
-      var stmt = pjs.allocStmt();
-
+      /* folgende Zeilen würde man mit für einen echten Datenbankzugriff benutzen
+      let stmt = pjs.allocStmt();
       stmt.executeDirect(
         "SELECT * FROM GUENEY.ASTAKG00 WHERE ARTIKELID = " + artikelid.trim()
       );
 
-      var row = stmt.fetch();
+      let row = stmt.fetch();
       stmt.close();
+      */
+
+      let row = dbData[artikelid.trim()];
 
       if (row) {
         container = true;

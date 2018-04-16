@@ -20,8 +20,8 @@ function generateBarcode(row, callback) {
 function generatePdf(object, barcode, callback) {
   let printer = new PdfPrinter({
     Roboto: {
-      normal: "/profoundkg/modules/pow3r/fonts/Roboto-Regular.ttf",
-      bold: "/profoundkg/modules/pow3r/fonts/Roboto-Bold.ttf"
+      normal: "./modules/pow3r/fonts/Roboto-Regular.ttf",
+      bold: "./modules/pow3r/fonts/Roboto-Bold.ttf"
     }
   });
   let pdfDefinition = {
@@ -50,9 +50,7 @@ function generatePdf(object, barcode, callback) {
         },
         {
           image:
-            "/www/profound80/htdocs/profoundui/userdata/images/" +
-            object["ean"] +
-            ".jpg",
+            "./htdocs/profoundui/userdata/images/" + object["ean"] + ".jpg",
           width: 300,
           margin: [0, 20, -750, 0]
         }
@@ -62,13 +60,10 @@ function generatePdf(object, barcode, callback) {
 
   let pdfDocument = printer.createPdfKitDocument(pdfDefinition);
   pdfDocument.pipe(
-    fs.WriteStream("/profoundkg/modules/pow3r/pdf/" + object["ean"] + ".pdf")
+    fs.WriteStream("./modules/pow3r/pdf/" + object["ean"] + ".pdf")
   );
   pdfDocument.end();
-  callback(
-    undefined,
-    "/profoundkg/modules/pow3r/pdf/" + object["ean"] + ".pdf"
-  );
+  callback(undefined, "./modules/pow3r/pdf/" + object["ean"] + ".pdf");
 }
 
 function sendEmail(pdfPath, recipients, callback) {
