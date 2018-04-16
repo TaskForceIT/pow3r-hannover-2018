@@ -5,13 +5,28 @@
     "Quellcode für die Präsentation von Kerim Güney, 13. April 2018",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TaskForceIT/pow3r-hannover-2018.git"
   },
-  "keywords": [],
+  "keywords": [
+    "task-force it-consulting",
+    "task-force",
+    "pow3r",
+    "pow3r 2018",
+    "pow3r hannover",
+    "pow3r hannover 2018",
+    "profound",
+    "profoundjs",
+    "pjs",
+    "profound logic",
+    "profoundlogic",
+    "profound ui",
+    "profoundui"
+  ],
   "author":
     "Task Force IT-Consulting GmbH info@taskforce-it.de (https://taskforce-it.de)",
   "contributors": [
@@ -21,5 +36,11 @@
   "bugs": {
     "url": "https://github.com/TaskForceIT/pow3r-hannover-2018/issues"
   },
-  "homepage": "https://github.com/TaskForceIT/pow3r-hannover-2018#readme"
+  "homepage": "https://github.com/TaskForceIT/pow3r-hannover-2018#readme",
+  "dependencies": {
+    "bwip-js": "^1.6.3",
+    "nodemailer": "^4.6.4",
+    "pdfmake": "^0.1.36",
+    "profoundjs": "^4.2.8"
+  }
 }
